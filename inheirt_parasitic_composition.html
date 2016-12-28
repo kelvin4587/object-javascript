@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承</title>
+</head>
+<script>
+function object(o){
+    function F() {
+
+    }
+    F.prototype = o;
+    return new F();
+}
+function inheritPrototype(child,father) {
+    var prototype = object(father.prototype);
+    prototype.constructor = child;
+    child.prototype = prototype;
+}
+function father(name){
+    this.faName = 'father';
+}
+father.prototype.getfaName = function () {
+    console.log(this.faName);
+};
+function child(args) {
+    this.chName = 'child';
+    father.call(this);
+}
+inheritPrototype(child,father);
+child.prototype.getchName = function () {
+    console.log(this.chName);
+};
+console.log(child.prototype.isPrototypeOf(new child()));
+console.log(new child() instanceof child);
+</script>
+<body>
+
+</body>
+</html>

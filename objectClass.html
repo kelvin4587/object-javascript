@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+</head>
+<script>
+   var AdFrame={};
+</script>
+<script src="basetype/Util.js"></script>
+<script src="basetype/Class.js"></script>
+<script>
+    var a={};
+    a.name='kelvin';
+    a.initialize=function () {
+
+    };
+    a.action=function () {
+        alert(this.name+' in action');
+    };
+    var constructor=function (name) {
+      this.name=name;
+      this.action=function () {
+          alert(this.name+' in action');
+      };
+      this.initialize=function () {
+
+      };
+    };
+    var B=AdFrame.Class(constructor,{});
+    var b=new B('wangkun');
+    b.action();
+</script>
+<body>
+test1
+</body>
+</html>

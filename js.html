@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js</title>
+</head>
+<script>
+function Foo() {
+    this.value = 42;
+}
+Foo.prototype = {
+    method:function () {
+
+    }
+};
+function Bar() {
+
+}
+Bar.prototype = new Foo();
+Bar.prototype.foo = 'Hello World';
+Bar.prototype.constructor = Bar;
+var test = new Bar();
+
+</script>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承</title>
+</head>
+<script>
+    function father() {
+        this.faName = 'father';
+        console.log("run father contructor");
+    }
+    father.prototype.getfaName = function () {
+        console.log(this.faName);
+    };
+    function child(){
+        this.chName = 'child';
+        father.call(this);
+    }
+    child.prototype = new father();
+    child.prototype.constructor = child;
+    child.prototype.getchName = function (){
+        console.log(this.chName);
+    }
+    var c =new child();
+    c.getfaName();
+    c.getchName();
+</script>
+<body>
+
+</body>
+</html>
