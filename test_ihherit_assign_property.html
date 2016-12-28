@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试继承函数</title>
+    <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.5.2/jasmine_favicon.png">
+    <link rel="stylesheet" href="lib/jasmine-2.5.2/jasmine.css">
+    <script src="lib/jasmine-2.5.2/jasmine.js"></script>
+    <script src="lib/jasmine-2.5.2/jasmine-html.js"></script>
+    <script src="lib/jasmine-2.5.2/boot.js"></script>
+    <script src="basetype/inherit.js"></script>
+</head>
+<script>
+    describe("继承函数测试包", function() {
+        var unitcircle ;
+        var c;
+        //每次specs执行时
+        beforeEach(function() {
+            unitcircle = {r:1};
+            unitcircle.setR =function (r) {
+                this.r=r;
+            }
+            c = inherit(unitcircle);
+            c.x = 1;
+            c.y = 1;
+            c.r = 2;
+            unitcircle.setR(3);
+        });
+        //每个specs执行后
+        afterEach(function() {
+            unitcircle ={};
+            c = {};
+        });
+        it("对原型对象进行了修改", function() {
+            expect(unitcircle.r).toBe(3);
+        });
+    });
+</script >
+<body>
+
+</body>
+</html>
