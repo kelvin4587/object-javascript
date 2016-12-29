@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试定义类函数</title>
+    <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.5.2/jasmine_favicon.png">
+    <link rel="stylesheet" href="lib/jasmine-2.5.2/jasmine.css">
+    <script src="lib/jasmine-2.5.2/jasmine.js"></script>
+    <script src="lib/jasmine-2.5.2/jasmine-html.js"></script>
+    <script src="lib/jasmine-2.5.2/boot.js"></script>
+    <script src="js/extend_advanced.js"></script>
+    <script src="js/defineClass.js"></script>
+</head>
+<script>
+    describe("测试定义类函数", function() {
+
+        it("用定义类生成一个range类", function() {
+            var simpleRange=defineClass(
+                function (f,t) {
+                    this.f=f;
+                    this.t=t;
+                },
+                {
+                    includes:function (x) {
+                        return this.f<=x&&x<=this.t;
+                    },
+                    toString:function () {
+                        return this.f + "..." + this.t;
+                    }
+                },
+                {
+                    upto:function (t) {
+                        return new SimpleRange(o,t);
+                    }
+                });
+        });
+
+
+    });
+</script >
+<body>
+
+</body>
+</html>

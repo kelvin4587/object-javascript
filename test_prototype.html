@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试prototype和constructor的关系</title>
+    <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.5.2/jasmine_favicon.png">
+    <link rel="stylesheet" href="lib/jasmine-2.5.2/jasmine.css">
+    <script src="lib/jasmine-2.5.2/jasmine.js"></script>
+    <script src="lib/jasmine-2.5.2/jasmine-html.js"></script>
+    <script src="lib/jasmine-2.5.2/boot.js"></script>
+</head>
+<script>
+    describe("测试prototype和constructor的关系", function() {
+        it("构造函数和它本事prototype.construtor相等", function() {
+            var F=function () {
+
+            };
+            expect(F===F.prototype.constructor).toBe(true);
+        });
+
+
+    });
+</script >
+<body>
+
+</body>
+</html>

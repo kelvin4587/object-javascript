@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试继承函数</title>
+    <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.5.2/jasmine_favicon.png">
+    <link rel="stylesheet" href="lib/jasmine-2.5.2/jasmine.css">
+    <script src="lib/jasmine-2.5.2/jasmine.js"></script>
+    <script src="lib/jasmine-2.5.2/jasmine-html.js"></script>
+    <script src="lib/jasmine-2.5.2/boot.js"></script>
+    <script src="js/inherit.js"></script>
+    <script src="js/range_factory.js"></script>
+</head>
+<script>
+    describe("测试范围函数", function() {
+        var r;
+        //每次specs执行时
+        beforeEach(function() {
+           r = range(1,3);
+        });
+        it("测试是否在范围之中，打印内部结构", function() {
+            expect(r.includes(2)).toBe(true);
+            r.foreach(console.log);
+            console.log(r+'');
+        });
+
+
+    });
+</script >
+<body>
+
+</body>
+</html>

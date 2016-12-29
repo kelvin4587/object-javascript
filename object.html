@@ -9,11 +9,11 @@
         var o1=Object.create({x:1,y:2});
         var o2=Object.create(null);
         var o3=Object.create(Object.prototype);
-        console.log(o3.prototype===o3._proto_);
-        console.log(o3.prototype===Object.prototype);
+        //根本没有这个属性
+        console.log(o3.constructor.prototype===o3.__proto__);
+        console.log(o3.__proto__===Object.prototype);
         var o4=inherit(Object.prototype);
-        console.log(o4.prototype===o4._proto_);
-        console.log(o4.prototype===Object.prototype);
+        console.log(o4.__proto__===Object.prototype);
     }
     function inherit(p) {
         if(p == null) throw TypeError();
