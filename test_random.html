@@ -8,32 +8,25 @@
     <script src="lib/jasmine-2.5.2/jasmine.js"></script>
     <script src="lib/jasmine-2.5.2/jasmine-html.js"></script>
     <script src="lib/jasmine-2.5.2/boot.js"></script>
-    <script src="basetype/inherit.js"></script>
+    <script src="js/random.js"></script>
 </head>
 <script>
-    describe("继承函数测试包", function() {
-        var unitcircle ;
-        var c;
-        //每次specs执行时
+    describe("随机数生产器", function() {
+        var max=255;
+        var min=0;
+        var octet;
         beforeEach(function() {
-            unitcircle = {r:1};
-            c = inherit(unitcircle);
-            c.x = 1;
-            c.y = 1;
-            c.r = 2;
+            octet = random.octet;
+            random.num = 'test';
         });
-        //每个specs执行后
-        afterEach(function() {
-            unitcircle ={};
-            c = {};
+        it("随机生产数字", function() {
+            expect(octet).toBeLessThanOrEqual(255);
+            expect(octet).toBeGreaterThanOrEqual(0);
+            expect(octet).toBe(Math.floor(octet));
         });
-        it("对原型对象没有修改", function() {
-            expect(unitcircle.r).toBe(1);
+        it("测试setter方法", function() {
+            expect(random.num).toBe('test');
         });
-        it("从原型链测试对原型对象没有修改", function() {
-            expect(c.__proto__.r).toBe(1);
-        });
-
     });
 </script >
 <body>
