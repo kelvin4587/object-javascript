@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试Complex构造函数</title>
+    <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.5.2/jasmine_favicon.png">
+    <link rel="stylesheet" href="lib/jasmine-2.5.2/jasmine.css">
+    <script src="lib/jasmine-2.5.2/jasmine.js"></script>
+    <script src="lib/jasmine-2.5.2/jasmine-html.js"></script>
+    <script src="lib/jasmine-2.5.2/boot.js"></script>
+    <script src="js/car.js"></script>
+
+</head>
+<script>
+    describe("测试Car构造函数", function() {
+        var toyota,volkswagen;
+        beforeEach(function () {
+            toyota = new Car('toyota');
+            volkswagen = new Car('volkswagen');
+        });
+        it("测试启动和构造后的值", function() {
+            volkswagen.start();
+            expect(toyota.brand).toBe('toyota');
+        });
+    });
+</script >
+<body>
+
+</body>
+</html>
