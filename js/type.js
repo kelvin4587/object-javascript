@@ -16,4 +16,4 @@ function classof(o) {
 Function.prototype.getName =function () {
     if("name" in this) return this.name;
     return this.name  = this.toString().match(/function\s*([^(]*)\(/)[i];
-}
+};

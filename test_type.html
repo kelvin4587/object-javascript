@@ -8,16 +8,19 @@
     <script src="lib/jasmine-2.5.2/jasmine.js"></script>
     <script src="lib/jasmine-2.5.2/jasmine-html.js"></script>
     <script src="lib/jasmine-2.5.2/boot.js"></script>
-    <script src="js/Complex.js"></script>
-
 </head>
 <script>
     describe("测试Complex构造函数", function() {
-        var c,d;
+        var Complex,Range;
         beforeEach(function () {
-            c = new Complex(2,3);
-            d = new Complex(c.i,c.r);
-            console.log(c.add(d).toString());
+           Complex = function (x,y) {
+               this.r = x;
+               this.i = y;
+           }
+           Range =function Range(f,t) {
+               this.from=f;
+               this.to=t;
+           }
         });
         it("使用Complex构造函数", function() {
             expect(Complex.parse(c.toString()).add(c.neg()).equals(Complex.ZERO)).toBe(true);

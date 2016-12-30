@@ -2,25 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>测试Complex构造函数</title>
+    <title>测试正则表达式</title>
     <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.5.2/jasmine_favicon.png">
     <link rel="stylesheet" href="lib/jasmine-2.5.2/jasmine.css">
     <script src="lib/jasmine-2.5.2/jasmine.js"></script>
     <script src="lib/jasmine-2.5.2/jasmine-html.js"></script>
     <script src="lib/jasmine-2.5.2/boot.js"></script>
-    <script src="js/Complex.js"></script>
-
 </head>
 <script>
-    describe("测试Complex构造函数", function() {
-        var c,d;
-        beforeEach(function () {
-            c = new Complex(2,3);
-            d = new Complex(c.i,c.r);
-            console.log(c.add(d).toString());
+    describe("正则表达式", function() {
+        var regularExpression;
+        beforeEach(function() {
+            regularExpression=/s$/;
         });
-        it("使用Complex构造函数", function() {
-            expect(Complex.parse(c.toString()).add(c.neg()).equals(Complex.ZERO)).toBe(true);
+        it("测试字面量正则表达是不是生成新的对象", function () {
+            var newRegularExpression=/s$/;
+            expect(regularExpression===newRegularExpression).toBe(true);
         });
     });
 </script >
